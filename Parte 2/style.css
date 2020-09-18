@@ -1,75 +1,116 @@
-header {
-
-
-}
-
-
-h2 {
-
-}
-
 .nav {
-
-
-  }
-
-  li {
-
-
-  }
-
-  .content{
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-  .aside {
-
-  }
-
-  .slidebox{
-
-   
-  }
-
-  .article{
-
-  }
-
-
-.poem{
-
+li {
+  list-style-type: none;
+  border: 1px solid;
+  margin-bottom: 80px;
+  align-content: center;
+  min-width: 90%;
+  text-align: center;
 }
 
+.content, header{
+    display: none;
+}
+
+@media (max-width:599px) {
+  h2 {
+    display: none;
+  }
+}
 
 /*Device = Tablets, Ipads (portrait)
   Screen = B/w 600px to 990px*/
-  @media (min-width:600px) and (max-width: 990px)  {
-    .article {
-
-  } 
-header{
-
-}
-}
-
-/*  Small devices    */
-@media (max-width:599px) {
-
-header,.content{
-
-}
-
-.nav {
-
-
+@media (min-width:600px) and (max-width: 990px)  {
+  .nav {
+    flex-direction: row;
+    justify-content: center;
   }
 
+  h2 {
+    display: none;
+  }
 
-.nav > li {
+  li {
+    margin-right: 2px;
+    min-width: 19%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
 
+  .content {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid;
+  }
+
+  .aside, .poem {
+    border: 1px solid;
+  }
+
+  .slidebox {
+    border: 1px solid;
+    text-align: center;
+    min-width: 150px;
+    margin-bottom: 50px;
+  }
 }
 
+/*  desktop    */
+@media (min-width:991px) {
 
+  header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    align-content: center;
+    text-align: center;
+  }
+
+  h2 {
+    margin-right: 2px;
+    display: inline;
+    text-align: center;
+    min-width: 30%;
+    border: 1px solid;
+  }
+
+  .nav {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  li {
+    margin-right: 2px;
+    min-width: 19%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .article {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid;
+  }
+
+  .aside, .poem {
+    border: 1px solid;
+  }
+
+  .slidebox {
+    border: 1px solid;
+    text-align: center;
+    min-width: 300px;
+    margin-bottom: 50px;
+  }
 }
 
 
