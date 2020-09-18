@@ -4,13 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" type ="text/css" href="style.css">
-
-
 <script>
 
 let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogelio','Bertha'];
-
-
 
 // ************** PARTE 1    **************
 
@@ -31,7 +27,15 @@ Crea una funcion llamada: challenge1  que realice lo siguiente:
 
 // CREA TU FUNCION challenge1 aqui 
 
-
+function challenge1() {
+  var cant = prompt("¿Cuántos botones necesitas?");
+  for(var i = 0; i < cant; ++i){
+    var dummy = document.getElementById("dummy");
+    var button = document.createElement("button");
+    button.textContent = nombres[i];
+    dummy.appendChild(button);
+  }
+}
 
 // ************** PARTE 2    **************
 
@@ -42,6 +46,11 @@ Crea una funcion llamada: challenge2 que utilizando un FOR convierta todos los n
 
 // CREA TU FUNCION challenge2 2 aquí.
 
+function challenge2() {
+  for(var i = 0; i < nombres.length; ++i){
+    console.log(nombres[i].toUpperCase());
+  }
+}
 
 
 // ************** PARTE 3    **************
@@ -58,6 +67,7 @@ A) Escribe un constructor que te permita generar objetos de tipo "Dog" que recib
 B) Utilizando el constructor crea 3 objectos con diferentes valores y escribe en consola cada objeto.
 
 
+
 *****BONUS**** 10  puntos
 
 Crea una método llamado printInfo()  que escriba en consola todas las propiedades del objeto que lo invoca. 
@@ -68,27 +78,37 @@ Invoca la función para validar su funcionalidad.
 
 */
 
+function Dog(nombre, color, raza){
+    this.nombre = nombre;
+    this.color = color;
+    this.raza = raza;
+}
 
+var Emma = new Dog('Emma', 'Cafe', 'Aerdale Terrier');
+var Waffle = new Dog('Waffle', 'Gris', 'Shihtzu');
+var Winnie = new Dog('Winnie', 'Cafe', 'Salchicha');
 
+function challenge3() {
+  console.log(Emma);
+  console.log(Waffle);
+  console.log(Winnie);
+}
+
+function printInfo(dog) {
+    console.log(`Nombre: ${dog.nombre}, De color: ${dog.color}, Raza: ${dog.raza}`);
+}
+printInfo(Emma);
+printInfo(Waffle);
+printInfo(Winnie);
 
 
 </script>
-
 </head>
-
 <body>
-
     <button onclick="challenge1()">Challenge 1</button>
     <button onclick="challenge2()">Challenge 2</button>
-    <button onclick="challenge3()">Challenge 2</button>
-
-  
+    <button onclick="challenge3()">Challenge 2</button> 
 <div id = "dummy">
-
 </div>
- 
-
-
 </body>
-
 </html>
